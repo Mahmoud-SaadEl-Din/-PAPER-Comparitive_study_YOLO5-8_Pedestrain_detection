@@ -46,7 +46,7 @@ The general YOLO model is made up of a convolutional neural network (CNN) backbo
 ## Methodology
 
 ### Dataset Description
-![WiderPerson main image](/dataset_image.JPG)
+![WiderPerson main image](/dataset_image.jpg)
 The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in this study to evaluate the performance of different YOLO versions for pedestrian detection. The dataset is known for its highly diverse and dense annotations, providing a comprehensive benchmark for pedestrian detection tasks.
 
 - **Diversity and Scale**: The WiderPerson dataset contains a significantly higher number of annotations compared to previous datasets like CityPersons. It offers more than ten times the number of bounding boxes and covers a wider range of scales. The distribution of pedestrian sizes in the dataset is relatively uniform, making it a robust choice for training and testing.
