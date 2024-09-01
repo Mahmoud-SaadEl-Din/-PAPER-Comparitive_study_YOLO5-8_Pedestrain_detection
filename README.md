@@ -2,27 +2,12 @@
 
 This repository summarize my work in my paper titled **"Pedestrian Detection Using YOLO Algorithm: An Experimental Study."** The paper explores various YOLO versions, such as YOLOv5, YOLOv6, YOLOv7, and YOLOv8, and evaluates their effectiveness in real-time object detection (pedestrain detection) tasks.
 
-## Points Covered in the paper
-
-- [YOLO versions explained](#Yolo versions)
-- [Difference Between YOLO Versions](#introduction)
-- [Methodology](#methodology)
-  - [Dataset Description](#dataset-description)
-  - [Experimental Setup](#experimental-setup)
-- [Results and Discussion](#results-and-discussion)
-  - [Evaluation Metrics](#evaluation-metrics)
-  - [Comparison of YOLO Versions](#comparison-of-yolo-versions)
-- [Conclusion](#conclusion)
-- [References](#references)
-
-
-
-## Yolo versions
+# Power of YOLO
 Unlike traditional methods that require multiple passes over an image, YOLO is a real-time object detection system that predicts bounding boxes and class probabilities in a single pass. It revolutionized the field by achieving impressive speed and accuracy trade-offs.
 
 In YOLO, the input image is divided into a grid, and each grid cell is responsible for detecting objects present in its spatial region. Multiple bounding box predictions are made within each grid cell, along with corresponding class probabilities. These predictions are refined using convolutional neural networks (CNNs) trained on large-scale datasets.
 
-
+# A Quick look over YOLO5:8
 The general YOLO model is made up of a convolutional neural network (CNN) backbone, a neck, and a head.
 
 ### YOLOv5
@@ -54,7 +39,10 @@ The general YOLO model is made up of a convolutional neural network (CNN) backbo
 - **Loss Functions:** Combination of CIoU (Complete IoU, a modified version of IoU loss) & DFL (Decoupled Fully-connected with Label Smoothing) Loss & Binary Cross-Entropy Loss
 - **Special Features:** **Efficient Bottleneck Layers (C2f):** Enhances feature extraction by combining high-level object details with contextual information, boosting detection performance. & **Segmentation and Detection Heads:** Dual-purpose heads improve both segmentation and object detection, increasing overall model versatility and accuracy.
 
-## Related Work
+### Comparison summarization
+![Alt text](/summary_table.png)
+
+# Related Work
 
 This section reviews existing literature on pedestrian detection and the use of YOLO in various applications. It provides a background on previous studies and situates the current research within the broader context of object detection in computer vision.
 
