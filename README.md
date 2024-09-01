@@ -102,10 +102,23 @@ for object detection performance, very modular way and representitive metrics is
   - **Importance**: Analyzing performance across different confidence thresholds helps to understand how model predictions vary with confidence levels. This is crucial for fine-tuning models to optimize performance based on the desired balance between precision and recall, especially in applications where the cost of false positives and false negatives differs.
 
 ## Results and Discussion
+In this section, we show the results of the evaluation metrics after finetuning the models. the following figure shows the **Average precision AP with different confidence threshold**:
+![AP](images/Yolo58_AP.jpg)
+
+The following figure shows the results on the **AP@50 with different confidence threshold**:
+![AP](images/Yolo58_AP50.jpg)
 
 
+The following figure shows the results on the **AP@75 with different confidence threshold**:
+![AP](images/Y58AP75.jpg)
 
+- **Discussion**:
+  - Comparing all the figures above, **we can notice confidence drawback in all the models**. Figures shows acceptable AP when the confidence threshold = 0.1 And when increasing the confidence threshold the AP decrease dramatically.
+  - **for AP@50 and AP@75**, Comparing each version with it self on those different IoU threshould. We can notice that, on AP@50 values are much higher than AP@75. meaning that objects are detected but the overlap between GT and pred is less that 0.75 but above 0.5. **Which led to localization ability of those models needs futher improvement.**  
 
+- The following figures show sample of prediction as qualitative analysis:
+![AP](images/GT_v5_v6.jpg)
+![AP](images/GT_v7_v8.jpg)
 
 
 ## Conclusion
@@ -118,3 +131,12 @@ Building on the findings of this study, future research efforts can focus on add
 ## References
 
 A list of references cited in the paper, following the appropriate citation style.
+
+## Citation
+```bibtex
+@article{Saad2024yolo_widerperson_comparitive,
+    title={Comparitive study for yolo versions on pedestrain detection},
+    author={Mahmoud Saad, Eslam Magdy},
+    booktitle={arXiv preprint arxiv:},
+    year={2024}
+}
