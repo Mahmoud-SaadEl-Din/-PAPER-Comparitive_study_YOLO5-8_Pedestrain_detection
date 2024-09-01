@@ -71,25 +71,49 @@ The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in
 
 - **Benchmarking**: An online benchmark is also available for the WiderPerson dataset, allowing researchers to compare their models' performance with existing methods.
 
-The WiderPerson dataset’s diversity and density make it a valuable resource for training and testing pedestrian detection models, offering a more challenging environment compared to traditional datasets.
+### Dataset Preparation
+The WiderPerson dataset’s diversity and density make it a valuable resource for training and testing pedestrian detection models, offering a more challenging environment compared to traditional datasets. To prepare the dataset for finetuning, kindly refer to **my Widerperson_preparation** repo.
 
-### Experimental Setup
+# Experimental Setup
 
-This section describes the experimental setup, including the hardware and software used, the implementation details of each YOLO version, and the evaluation metrics applied in the study.
-
-## Results and Discussion
+After preparing Widerperson dataset. We had **finetuning on widerperson & run predictions** all the YOLO versions from 5 to 8 with all sizes (nano, small, medium, large). To know how to run, please refer to how_to.txt that will help in applying YOLO models to predict on the dataset.
 
 ### Performance Metrics
 
-An analysis of the performance metrics for each YOLO version, such as accuracy, precision, recall, and inference time. The section compares these metrics across different versions to highlight their strengths and weaknesses.
+for object detection performance, very modular way and representitive metrics is known to measure the performance of object detectors as IoU, precision, recall. In this study, we are not aiming to select the best model for pedestrain detection. But also do deep analysis, for that, to assess the performance of different YOLO versions, we analyze model behavior over different IoU thresholds and confidence values. Using the following:
 
-### Comparison of YOLO Versions
+- **Average Precision (AP):**
+  - Combines precision and recall into a single value. providing a balanced measure of a model's accuracy and its ability to identify all relevant objects.
+  - Calculated by computing the area under the precision-recall curve.
+  - **Importance**: AP is a comprehensive metric that reflects both the precision (the accuracy of the predictions) and recall (the ability to capture all relevant instances). It is especially useful for comparing models as it accounts for both false positives and false negatives.
 
-A detailed comparison of YOLOv5, YOLOv6, YOLOv7, and YOLOv8, discussing how each version performs in pedestrian detection tasks and which version offers the best balance between accuracy and speed.
+
+- **IoU Thresholds for AP Calculation:**
+  - **AP@0.5:0.05:0.9**: Average Precision evaluated at multiple IoU thresholds from 0.5 to 0.9 in steps of 0.05.
+    - **Importance**: By evaluating performance at various IoU thresholds, this metric provides a more detailed understanding of how well a model performs across different levels of localization accuracy, helping to assess its robustness.
+  - **AP@0.5**: Evaluates model performance with an IoU threshold of 0.5 (50% overlap).
+    - **Importance**: A common metric for assessing general object detection performance. It is more lenient, allowing for some localization error, which is useful for general object detection tasks.
+  - **AP@0.75**: Evaluates model performance with an IoU threshold of 0.75 (75% overlap).
+    - **Importance**: This metric is more stringent and emphasizes precise localization. It is important for applications requiring high accuracy in object localization, such as autonomous driving or medical imaging.
+
+- **Confidence Levels:**
+  - AP values are calculated for confidence levels ranging from 0.1 to 0.5 in steps of 0.1.
+  - Only considers predicted boxes with confidence values above or equal to the threshold.
+  - **Importance**: Analyzing performance across different confidence thresholds helps to understand how model predictions vary with confidence levels. This is crucial for fine-tuning models to optimize performance based on the desired balance between precision and recall, especially in applications where the cost of false positives and false negatives differs.
+
+## Results and Discussion
+
+
+
+
+
 
 ## Conclusion
 
-The conclusion summarizes the key findings of the study, emphasizing the practical implications of the results for pedestrian detection in real-world applications. It also suggests potential directions for future research.
+From the deep analysis demonstrated above. Notably, **YOLOv6l** demonstrated superior performance, particularly in accurate pedestrian detection, showcasing its potential as a robust choice for real world applications. The observed challenges in achieving perfect object localization, especially for smaller objects, underscore the need for continuous refinement in object detection methodologies.
+
+## Future Work
+Building on the findings of this study, future research efforts can focus on addressing specific challenges and advancing the capabilities of YOLO models. Refinement in boundary localization, particularly for smaller objects, stands out as a crucial area for improvement. Investigating techniques to enhance the models’ precision and localization accuracy, especially in scenarios with a high density of small objects, would contribute significantly to the field. **Additionally, exploring methods to mitigate the observed drop in precision from AP@50 to AP@75 could lead to improvements in overall object localization.**
 
 ## References
 
