@@ -117,6 +117,7 @@ The following figure shows the results on the **AP@75 with different confidence 
   - **for AP@50 and AP@75**, Comparing each version with it self on those different IoU threshould. We can notice that, on AP@50 values are much higher than AP@75. meaning that objects are detected but the overlap between GT and pred is less that 0.75 but above 0.5. **Which led to localization ability of those models needs futher improvement.**  
 
 - The following figures show sample of prediction as qualitative analysis:
+
 ![AP](images/GT_v5_v6.jpg)
 ![AP](images/GT_v7_v8.jpg)
 
