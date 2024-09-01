@@ -1,6 +1,6 @@
 # Pedestrian Detection Using YOLO Algorithm: An Experimental Study
 
-This repository summarize my work in my paper titled **"Pedestrian Detection Using YOLO Algorithm: An Experimental Study."** The study provides a comprehensive analysis of different versions of the YOLO (You Only Look Once) framework, focusing specifically on their performance in pedestrian detection. The paper explores various YOLO versions, such as YOLOv5, YOLOv6, YOLOv7, and YOLOv8, and evaluates their effectiveness in real-time object detection tasks.
+This repository summarize my work in my paper titled **"Pedestrian Detection Using YOLO Algorithm: An Experimental Study."** The paper explores various YOLO versions, such as YOLOv5, YOLOv6, YOLOv7, and YOLOv8, and evaluates their effectiveness in real-time object detection (pedestrain detection) tasks.
 
 ## Points Covered in the paper
 
