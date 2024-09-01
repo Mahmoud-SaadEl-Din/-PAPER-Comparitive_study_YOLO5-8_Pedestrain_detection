@@ -112,7 +112,7 @@ for object detection performance, very modular way and representitive metrics is
 ⭐The following figure shows the results on the **AP@0.75 with different confidence threshold**:
 ![AP](images/Y58AP75.jpg)
 
-- ** 🔍⭐  Discussion**:
+- 🔍⭐**Discussion**:
   - Comparing all the figures above, **we can notice confidence drawback in all the models**. Figures shows acceptable AP when the confidence threshold = 0.1 And when increasing the confidence threshold the AP decrease dramatically.
   - **for AP@50 and AP@75**, Comparing each version with it self on those different IoU threshould. We can notice that, on AP@50 values are much higher than AP@75. meaning that objects are detected but the overlap between GT and pred is less that 0.75 but above 0.5. **Which led to localization ability of those models needs futher improvement.**  
 
