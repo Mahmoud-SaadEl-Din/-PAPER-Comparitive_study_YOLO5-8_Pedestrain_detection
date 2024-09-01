@@ -37,20 +37,17 @@ The general YOLO model is made up of a convolutional neural network (CNN) backbo
 - **Neck:** The C2f module acts as a more efficient and accurate bottleneck layer that combines high-level features with contextual information, improving detection accuracy by integrating object details with surrounding context.
 - **Head:** Comprises a pair of segmentation heads followed by detection heads similar to YOLOv8. The segmentation heads are responsible for semantic segmentation, while the detection heads forecast object bounding boxes, classes, and confidence scores. The final prediction layer combines these outputs for object detection.
 - **Loss Functions:** Combination of CIoU (Complete IoU, a modified version of IoU loss) & DFL (Decoupled Fully-connected with Label Smoothing) Loss & Binary Cross-Entropy Loss
-- **Special Features:** **Efficient Bottleneck Layers (C2f):** Enhances feature extraction by combining high-level object details with contextual information, boosting detection performance. & **Segmentation and Detection Heads:** Dual-purpose heads improve both segmentation and object detection, increasing overall model versatility and accuracy.
+- **Special Features:**
+  - **Efficient Bottleneck Layers (C2f):** Enhances feature extraction by combining high-level object details with contextual information, boosting detection performance. & **Segmentation and Detection Heads:** Dual-purpose heads improve both segmentation and object detection, increasing overall model versatility and accuracy.
 
 ### Comparison summarization
-![Alt text](/summary_table.png)
-
-# Related Work
-
-This section reviews existing literature on pedestrian detection and the use of YOLO in various applications. It provides a background on previous studies and situates the current research within the broader context of object detection in computer vision.
+![Alt text](/summary_table.PNG)
 
 ## Methodology
 
 ### Dataset Description
 
-The **WiderPerson** dataset is utilized in this study to evaluate the performance of different YOLO versions for pedestrian detection. The dataset is known for its highly diverse and dense annotations, providing a comprehensive benchmark for pedestrian detection tasks.
+The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in this study to evaluate the performance of different YOLO versions for pedestrian detection. The dataset is known for its highly diverse and dense annotations, providing a comprehensive benchmark for pedestrian detection tasks.
 
 - **Diversity and Scale**: The WiderPerson dataset contains a significantly higher number of annotations compared to previous datasets like CityPersons. It offers more than ten times the number of bounding boxes and covers a wider range of scales. The distribution of pedestrian sizes in the dataset is relatively uniform, making it a robust choice for training and testing.
 
@@ -75,10 +72,6 @@ The **WiderPerson** dataset is utilized in this study to evaluate the performanc
 - **Benchmarking**: An online benchmark is also available for the WiderPerson dataset, allowing researchers to compare their models' performance with existing methods.
 
 The WiderPerson dataset’s diversity and density make it a valuable resource for training and testing pedestrian detection models, offering a more challenging environment compared to traditional datasets.
-
-### YOLO Algorithm Overview
-
-A brief overview of the YOLO algorithm, explaining its architecture and how it has evolved from YOLOv1 to YOLOv8. The section also discusses the key features of each YOLO version that are relevant to pedestrian detection.
 
 ### Experimental Setup
 
