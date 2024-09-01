@@ -102,14 +102,14 @@ for object detection performance, very modular way and representitive metrics is
   - **Importance**: Analyzing performance across different confidence thresholds helps to understand how model predictions vary with confidence levels. This is crucial for fine-tuning models to optimize performance based on the desired balance between precision and recall, especially in applications where the cost of false positives and false negatives differs.
 
 ## 🏆 Results and Discussion
-In this section, we show the results of the evaluation metrics after finetuning the models. the following figure shows the **Average precision AP with different confidence threshold**:
+In this section, we show the results of the evaluation metrics after finetuning the models. the following figure shows the **Average precision AP@0.5:0.05:0.9 with different confidence threshold**:
 ![AP](images/Yolo58_AP.jpg)
 
-The following figure shows the results on the **AP@50 with different confidence threshold**:
+The following figure shows the results on the **AP@0.5 with different confidence threshold**:
 ![AP](images/Yolo58_AP50.jpg)
 
 
-The following figure shows the results on the **AP@75 with different confidence threshold**:
+The following figure shows the results on the **AP@0.75 with different confidence threshold**:
 ![AP](images/Y58AP75.jpg)
 
 - **Discussion**:
