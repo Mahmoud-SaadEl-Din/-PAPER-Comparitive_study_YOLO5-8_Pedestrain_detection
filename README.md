@@ -7,24 +7,24 @@ Unlike traditional methods that require multiple passes over an image, YOLO is a
 
 In YOLO, the input image is divided into a grid, and each grid cell is responsible for detecting objects present in its spatial region. Multiple bounding box predictions are made within each grid cell, along with corresponding class probabilities. These predictions are refined using convolutional neural networks (CNNs) trained on large-scale datasets.
 
-# A Quick look over YOLO5:8
+# ⚡ 🧠 A Quick look over YOLO5:8
 The general YOLO model is made up of a convolutional neural network (CNN) backbone, a neck, and a head.
 
-### YOLOv5
+### ➡️YOLOv5
 - **Backbone:** YOLOv5 utilizes CSP-Darknet53, an optimized version of Darknet53
   - **Key Features:** Cross Stage Partial Network (CSP), Spatial Pyramid Pooling Fast (SPPF), SiLU (Swish) Activation
 - **Neck:** YOLOv5 incorporates a modified Path Aggregation Network (CSP-PAN)
 - **Head:** The final layer, adapted from YOLOv3
 - **Loss Functions:** Combination of Localization Loss & Confidence Loss & Classification Loss
 
-### YOLOv6
+### ➡️YOLOv6
 - **Backbone:** **RepBlock:** Lightweight and efficient for smaller models. & **CSP-StackRep Block:** More powerful backbone for larger models, capturing intricate visual patterns.
 - **Neck:** Modified PAN (Path Aggregation Network) topology, enhancing multi-scale feature fusion.
 - **Head:** Efficient decoupled head with a hybrid-channel strategy, optimizing classification and regression tasks separately.
 - **Loss Function:** Combination of Classification Loss (VariFocal Loss) & Box Regression Loss & Knowledge Distillation (Self-distillation using KL divergence) & Knowledge Distillation
 - **Special Features:** Reparameterization and Quantization (Techniques for optimizing model deployment and inference efficiency) & Knowledge Distillation (Improves accuracy by aligning the predictions of smaller models with those of larger, pre-trained models)
 
-### YOLOv7
+### ➡️YOLOv7
 
 - **Backbone:** **E-ELAN Computational Block:** Expands input feature map channels, shuffles feature order, and merges features from different groups, enhancing learning ability without disrupting the gradient path.
   
@@ -32,7 +32,7 @@ The general YOLO model is made up of a convolutional neural network (CNN) backbo
 - **Head:** A series of convolutional layers with batch normalization and ReLU activation functions, concluding with a softmax layer for class prediction. This head architecture ensures efficient and accurate prediction of bounding boxes and object classes.
 - **Loss Functions:** Combining Loss Functions, a weighted combination of loss functions (Binary Cross-Entropy Loss & Categorical Cross-Entropy Loss & Smooth L1 Loss) is employed, optimizing the importance of each loss type to enhance bounding box and label prediction accuracy.
 
-### YOLOv8
+### ➡️YOLOv8
 - **Backbone:** Utilizes CSPDarknet53 as a feature extractor, similar to YOLOv5 but replaces the CSPLayer with the C2f module. The C2f module is a cross-stage partial bottleneck with two convolutions, enhancing feature extraction.
 - **Neck:** The C2f module acts as a more efficient and accurate bottleneck layer that combines high-level features with contextual information, improving detection accuracy by integrating object details with surrounding context.
 - **Head:** Comprises a pair of segmentation heads followed by detection heads similar to YOLOv8. The segmentation heads are responsible for semantic segmentation, while the detection heads forecast object bounding boxes, classes, and confidence scores. The final prediction layer combines these outputs for object detection.
@@ -71,10 +71,10 @@ The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in
 
 - **Benchmarking**: An online benchmark is also available for the WiderPerson dataset, allowing researchers to compare their models' performance with existing methods.
 
-### Dataset Preparation
+### 📂 Dataset Preparation
 The WiderPerson dataset’s diversity and density make it a valuable resource for training and testing pedestrian detection models, offering a more challenging environment compared to traditional datasets. To prepare the dataset for finetuning, kindly refer to **my Widerperson_preparation** repo.
 
-# Experimental Setup
+# ⚙️ Experimental Setup
 
 After preparing Widerperson dataset. We had **finetuning on widerperson & run predictions** all the YOLO versions from 5 to 8 with all sizes (nano, small, medium, large). To know how to run, please refer to how_to.txt that will help in applying YOLO models to predict on the dataset.
 
@@ -112,11 +112,11 @@ The following figure shows the results on the **AP@0.5 with different confidence
 The following figure shows the results on the **AP@0.75 with different confidence threshold**:
 ![AP](images/Y58AP75.jpg)
 
-- **Discussion**:
+- ** 🔍  Discussion**:
   - Comparing all the figures above, **we can notice confidence drawback in all the models**. Figures shows acceptable AP when the confidence threshold = 0.1 And when increasing the confidence threshold the AP decrease dramatically.
   - **for AP@50 and AP@75**, Comparing each version with it self on those different IoU threshould. We can notice that, on AP@50 values are much higher than AP@75. meaning that objects are detected but the overlap between GT and pred is less that 0.75 but above 0.5. **Which led to localization ability of those models needs futher improvement.**  
 
-- The following figures show sample of prediction as qualitative analysis:
+- 📷 The following figures show sample of prediction as qualitative analysis:
 
 ![AP](images/GT_v5_v6.jpg)
 ![AP](images/GT_v7_v8.jpg)
