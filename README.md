@@ -1,8 +1,8 @@
-# Pedestrian Detection Using YOLO Algorithm: An Experimental Study
+# 🚶 Pedestrian Detection Using YOLO Algorithm: An Experimental Study
 
 This repository summarize my work in my paper titled **"Pedestrian Detection Using YOLO Algorithm: An Experimental Study."** The paper explores various YOLO versions, such as YOLOv5, YOLOv6, YOLOv7, and YOLOv8, and evaluates their effectiveness in real-time object detection (pedestrain detection) tasks.
 
-# Power of YOLO
+# 🖥️ Power of YOLO
 Unlike traditional methods that require multiple passes over an image, YOLO is a real-time object detection system that predicts bounding boxes and class probabilities in a single pass. It revolutionized the field by achieving impressive speed and accuracy trade-offs.
 
 In YOLO, the input image is divided into a grid, and each grid cell is responsible for detecting objects present in its spatial region. Multiple bounding box predictions are made within each grid cell, along with corresponding class probabilities. These predictions are refined using convolutional neural networks (CNNs) trained on large-scale datasets.
@@ -40,20 +40,20 @@ The general YOLO model is made up of a convolutional neural network (CNN) backbo
 - **Special Features:**
   - **Efficient Bottleneck Layers (C2f):** Enhances feature extraction by combining high-level object details with contextual information, boosting detection performance. & **Segmentation and Detection Heads:** Dual-purpose heads improve both segmentation and object detection, increasing overall model versatility and accuracy.
 
-### Comparison summarization
+### 🆚 Comparison summarization
 ![Alt text](/summary_table.PNG)
 
 ## Methodology
 
-### Dataset Description
+### 🗃️ Dataset Description
 ![WiderPerson main image](/dataset_image.jpg)
 The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in this study to evaluate the performance of different YOLO versions for pedestrian detection. The dataset is known for its highly diverse and dense annotations, providing a comprehensive benchmark for pedestrian detection tasks.
 
-- **Diversity and Scale**: The WiderPerson dataset contains a significantly higher number of annotations compared to previous datasets like CityPersons. It offers more than ten times the number of bounding boxes and covers a wider range of scales. The distribution of pedestrian sizes in the dataset is relatively uniform, making it a robust choice for training and testing.
+- **🌍 Diversity and Scale**: The WiderPerson dataset contains a significantly higher number of annotations compared to previous datasets like CityPersons. It offers more than ten times the number of bounding boxes and covers a wider range of scales. The distribution of pedestrian sizes in the dataset is relatively uniform, making it a robust choice for training and testing.
 
-- **Density**: On average, there are approximately 28.87 persons per image, which is considerably higher than what is found in other pedestrian detection datasets. This high density ensures that models trained on this dataset are well-equipped to handle crowded scenes.
+- **👥 Density**: On average, there are approximately 28.87 persons per image, which is considerably higher than what is found in other pedestrian detection datasets. This high density ensures that models trained on this dataset are well-equipped to handle crowded scenes.
 
-- **Annotations and Labels**: The dataset provides five fine-grained labels:
+- **🏷️ Annotations and Labels**: The dataset provides five fine-grained labels:
   - Pedestrians
   - Riders
   - Partially-visible persons
@@ -62,7 +62,7 @@ The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in
 
   These labels help in distinguishing between different types of objects and scenarios, such as partially visible pedestrians or groups of people.
 
-- **Quality Assurance**: Multiple annotators have carefully checked and pre-filtered the annotations to ensure their quality and reliability. The dataset is divided into three subsets:
+- **✅ Quality Assurance**: Multiple annotators have carefully checked and pre-filtered the annotations to ensure their quality and reliability. The dataset is divided into three subsets:
   - Training set
   - Validation set
   - Testing set
@@ -78,17 +78,17 @@ The WiderPerson dataset’s diversity and density make it a valuable resource fo
 
 After preparing Widerperson dataset. We had **finetuning on widerperson & run predictions** all the YOLO versions from 5 to 8 with all sizes (nano, small, medium, large). To know how to run, please refer to how_to.txt that will help in applying YOLO models to predict on the dataset.
 
-### Performance Metrics
+### 📈 Evaluation Metrics
 
 for object detection performance, very modular way and representitive metrics is known to measure the performance of object detectors as IoU, precision, recall. In this study, we are not aiming to select the best model for pedestrain detection. But also do deep analysis, for that, to assess the performance of different YOLO versions, we analyze model behavior over different IoU thresholds and confidence values. Using the following:
 
-- **Average Precision (AP):**
+- **🏅 Average Precision (AP):**
   - Combines precision and recall into a single value. providing a balanced measure of a model's accuracy and its ability to identify all relevant objects.
   - Calculated by computing the area under the precision-recall curve.
   - **Importance**: AP is a comprehensive metric that reflects both the precision (the accuracy of the predictions) and recall (the ability to capture all relevant instances). It is especially useful for comparing models as it accounts for both false positives and false negatives.
 
 
-- **IoU Thresholds for AP Calculation:**
+- **📏 IoU Thresholds for AP Calculation:**
   - **AP@0.5:0.05:0.9**: Average Precision evaluated at multiple IoU thresholds from 0.5 to 0.9 in steps of 0.05.
     - **Importance**: By evaluating performance at various IoU thresholds, this metric provides a more detailed understanding of how well a model performs across different levels of localization accuracy, helping to assess its robustness.
   - **AP@0.5**: Evaluates model performance with an IoU threshold of 0.5 (50% overlap).
@@ -96,12 +96,12 @@ for object detection performance, very modular way and representitive metrics is
   - **AP@0.75**: Evaluates model performance with an IoU threshold of 0.75 (75% overlap).
     - **Importance**: This metric is more stringent and emphasizes precise localization. It is important for applications requiring high accuracy in object localization, such as autonomous driving or medical imaging.
 
-- **Confidence Levels:**
+- **🎯 Confidence Levels:**
   - AP values are calculated for confidence levels ranging from 0.1 to 0.5 in steps of 0.1.
   - Only considers predicted boxes with confidence values above or equal to the threshold.
   - **Importance**: Analyzing performance across different confidence thresholds helps to understand how model predictions vary with confidence levels. This is crucial for fine-tuning models to optimize performance based on the desired balance between precision and recall, especially in applications where the cost of false positives and false negatives differs.
 
-## Results and Discussion
+## 🏆 Results and Discussion
 In this section, we show the results of the evaluation metrics after finetuning the models. the following figure shows the **Average precision AP with different confidence threshold**:
 ![AP](images/Yolo58_AP.jpg)
 
@@ -121,18 +121,18 @@ The following figure shows the results on the **AP@75 with different confidence 
 ![AP](images/GT_v7_v8.jpg)
 
 
-## Conclusion
+## 📌 Conclusion
 
 From the deep analysis demonstrated above. Notably, **YOLOv6l** demonstrated superior performance, particularly in accurate pedestrian detection, showcasing its potential as a robust choice for real world applications. The observed challenges in achieving perfect object localization, especially for smaller objects, underscore the need for continuous refinement in object detection methodologies.
 
-## Future Work
+## 🔮 Future Work
 Building on the findings of this study, future research efforts can focus on addressing specific challenges and advancing the capabilities of YOLO models. Refinement in boundary localization, particularly for smaller objects, stands out as a crucial area for improvement. Investigating techniques to enhance the models’ precision and localization accuracy, especially in scenarios with a high density of small objects, would contribute significantly to the field. **Additionally, exploring methods to mitigate the observed drop in precision from AP@50 to AP@75 could lead to improvements in overall object localization.**
 
-## References
+## 📚 References
 
 A list of references cited in the paper, following the appropriate citation style.
 
-## Citation
+## 📚 Citation
 ```bibtex
 @article{Saad2024yolo_widerperson_comparitive,
     title={Comparitive study for yolo versions on pedestrain detection},
