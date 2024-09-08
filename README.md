@@ -1,13 +1,15 @@
-# 🚶 Pedestrian Detection Using YOLO Algorithm: An Experimental Study
+Paper is under review, [paper link](https://drive.google.com/file/d/1rZBenPCumQgqTJvHQlX_zYH-iUCeqDFG/view?usp=sharing)
+
+## 🚶 Pedestrian Detection Using YOLO Algorithm: An Experimental Study
 
 This repository summarize my work & my Master degree partner (Eslam Magdy) in our paper titled **"Pedestrian Detection Using YOLO Algorithm: An Experimental Study."** The paper explores various YOLO versions, such as YOLOv5, YOLOv6, YOLOv7, and YOLOv8, and evaluates their effectiveness in real-time object detection (pedestrain detection) tasks.
 
-# 🖥️ Power of YOLO
+## 🖥️ Power of YOLO
 Unlike traditional methods that require multiple passes over an image, YOLO is a real-time object detection system that predicts bounding boxes and class probabilities in a single pass. It revolutionized the field by achieving impressive speed and accuracy trade-offs.
 
 In YOLO, the input image is divided into a grid, and each grid cell is responsible for detecting objects present in its spatial region. Multiple bounding box predictions are made within each grid cell, along with corresponding class probabilities. These predictions are refined using convolutional neural networks (CNNs) trained on large-scale datasets.
 
-# ⚡ 🧠 A Quick look over YOLO5:8
+## ⚡ 🧠 A Quick look over YOLO5:8
 The general YOLO model is made up of a convolutional neural network (CNN) backbone, a neck, and a head.
 
 ### ➡️YOLOv5
@@ -74,7 +76,7 @@ The **[WiderPerson](https://arxiv.org/pdf/1909.12118v1)** dataset is utilized in
 ### 📂 Dataset Preparation
 The WiderPerson dataset’s diversity and density make it a valuable resource for training and testing pedestrian detection models, offering a more challenging environment compared to traditional datasets. To prepare the dataset for finetuning, kindly refer to **my Widerperson_preparation** repo.
 
-# ⚙️ Experimental Setup
+## ⚙️ Experimental Setup
 
 After preparing Widerperson dataset. We had **finetuning on widerperson & run predictions** all the YOLO versions from 5 to 8 with all sizes (nano, small, medium, large). To know how to run, please refer to how_to.txt that will help in applying YOLO models to predict on the dataset.
 
